@@ -3,3 +3,5 @@
 @import 'foundation/variables.css';
 @import 'foundation/base.css';
 @import 'foundation/typography.css';
+@import 'layout/header.css';
+@import 'component/logo.css';
