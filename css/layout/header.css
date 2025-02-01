@@ -12,3 +12,42 @@
   padding-top: 20px;
   
 }
+
+/*ヘッダーのロゴ定義*/
+.l-header__logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/*ヘッダータイトルフォント*/
+.l-header__text{
+  font-size: 20px;
+  margin-left: 3%;
+}
+
+/*ヘッダーアイコン詳細*/
+.l-header__image{
+  width: 65px;
+  height: 65px;
+}
+
+/*ナビゲーションウインドウ要素位置調整*/
+.l-header__nav{
+  margin-bottom: 20%;
+}
+
+/*naviitemフォント・位置設定*/
+.l-header__navItem{
+  font-size: 14px;
+  padding-left: 15%;
+  padding-top: 5%;
+}
+
+.l-header__snsNavitem{
+  font-size: 14px;
+  padding-left: 15%;
+  padding-top: 5%;
+}

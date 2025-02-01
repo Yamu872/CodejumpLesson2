@@ -3,36 +3,49 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>明るいHOUSE</title>
-    <link rel="stylesheet" href="/Users/yamamototatsuya/CodeJumpLesson2/css/style.css">
+    <title>明るい HOUSE</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="l-header">
-    <div class="c-logo">
-      <img src="/Users/yamamototatsuya/CodeJumpLesson2/img/favicon.ico" alt="ロゴ画像" class="c-logo__image">
-      <span class="c-logo__text">明るいHOUSE</span>
+    <div class="l-header__logo">
+      <img src="../img/favicon.ico" alt="ロゴ画像" class="l-header__image">
+      <span class="l-header__text">明るい HOUSE</span>
+    </div>
+  
+    <!-- ナビゲーションメニュー(SNS以外)-->
+    <nav class="l-header__nav">
+      <ul class="l-header__navList">
+        <li class="l-header__navItem"><a href="#">私たちについて</a></li>
+        <li class="l-header__navItem"><a href="#">サービス</a></li>
+        <li class="l-header__navItem"><a href="#">商品情報</a></li>
+        <li class="l-header__navItem"><a href="#">展示会</a></li>
+        <li class="l-header__navItem"><a href="#">暮らしの日記</a></li>
+        <li class="l-header__navItem"><a href="#">会社概要</a></li>
+      </ul>
+    </nav>
+
+
+  <!-- ナビゲーションメニュー(SNS)-->
+    <nav class="l-header__snsNav">
+      <ul class="l-header__snsNavlist">
+        <li class="l-header__snsNavitem"><a href="#">Twitter</a></li>
+        <li class="l-header__snsNavitem"><a href="#">facebook</a></li>
+        <li class="l-header__snsNavitem"><a href="#">instagram</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <main class="l-main">
+    <!--背景動画が被るセクションの定義-->
+    <div class="l-main__movieSection">
+      <video src="../img/4669556.mp4" autoplay loop muted playsinline></video>
+      <section class="p-projectSection">
+        <h1 class="p-projectSection__title">建築事例のご紹介</h1>
+      </section>
     </div>
 
-    <!-- ナビゲーションメニュー -->
-    <nav class="c-nav">
-      <ul class="c-nav__list">
-        <li class="c-nav__item"><a href="#">私たちについて</a></li>
-        <li class="c-nav__item"><a href="#">サービス</a></li>
-        <li class="c-nav__item"><a href="#">商品情報</a></li>
-        <li class="c-nav__item"><a href="#">展示会</a></li>
-        <li class="c-nav__item"><a href="#">暮らしの日記</a></li>
-        <li class="c-nav__item"><a href="#">会社概要</a></li>
-      </ul>
-    </nav>
-
-    <nav class="c-snsnav">
-      <ul class="c-snsnav__list">
-        <li class="c-snsnav__item"><a href="#">Twitter</a></li>
-        <li class="c-snsnav__item"><a href="#">facebook</a></li>
-        <li class="c-snsnav__item"><a href="#">instagram</a></li>
-      </ul>
-    </nav>
-
-  </header>
+  </main>
 </body>
 
