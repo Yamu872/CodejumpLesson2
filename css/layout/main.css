@@ -1,28 +1,341 @@
+/* ========== 各セクションの基本スタイル ========== */
 
+/*先にheaderの分だけ全体をずらす*/
+.l-main__container{
+  margin-left: 300px;
+}
+
+/*動画のキャンバス的要素*/
 .l-main__movieSection{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
-  height: 50vh; /* 動画の高さを画面の50%に設定 */
+  height: 80vh; /* 動画の高さを画面の50%に設定 */
   z-index: -1; /* 他のコンテンツが上に重なるように設定 */
 }
 
 .l-main__movieSection video{
   width: 100%;
-  height: 50vh;
+  height: 80vh;
   object-fit: cover; /* 動画をコンテナにフィットさせる */
 }
 
-.p-projectSection{
-  
-  
+/*セクションの背景色を指定してグラデーションを入れる*/
+.p-blackBg{
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
 }
 
-.p-projectSection__title{
-  color: black;
-  font-size: large;
-  margin-left: 50%;
-  margin-top: 50%;
+/*各セクションタイトル本体*/
+.c-sectionTitle{
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  padding-top: 10%;
 }
+
+/*一番最初のセクションタイトルのみ上部スペース確保*/
+.c-sectionTitle__first{
+  margin-top: 80vh;
+}
+
+/*各セクションタイトル左右線*/
+.c-sectionTitle::before,.c-sectionTitle:after{
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background-color: white;
+}
+.c-sectionTitle::before{
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
+.c-sectionTitle:after{
+  margin-right: 1rem;
+  margin-left: 2rem;
+}
+
+/*後半のセクションタイトル（色変更）*/
+.c-sectionTitle__latter{
+  color: black;
+}
+
+.c-sectionTitle__latter::before,.c-sectionTitle__latter:after{
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background-color: black;
+}
+
+/*///////////////////////////////各プロジェクトについて///////////////////////////////*/
+/*画像のグリッド作成*/
+.p-projectSection__panel{
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 3%;
+}
+
+.p-projectSection__gridItem{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*画像枠線の影指定*/
+.p-projectSection__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #fff; /* 2ピクセルの白い実線の枠線 */
+  box-shadow: 
+  inset 0 0 10px rgba(0, 0, 0, 0.2), /* 内側全方向に薄い影 */
+  inset 0 -20px 10px #333333; /* 内側下方向に濃い影 */ 
+  pointer-events: none; /* 影がクリックイベントを受け取らないようにする */
+}
+
+/*枠線内に写真を収める*/
+.p-projectSection__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*各写真のキャプション*/
+.p-projectSection__caption{
+  position: absolute;
+  bottom: 3px;
+  left: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/*///////////////////////////////明るいHOUSEの特徴///////////////////////////////*/
+
+/*円形リンク配置用の設定*/
+.p-feature__circleLinks{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  color: #fff; /*ここでフォントカラー指定*/
+  padding-bottom: 15%; /*下のスペースを作成*/
+}
+
+/*円形リンク自体のスタイル設定*/
+.p-feature__circleLink{
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid #fff; /* 白い枠線 */
+  background-color: transparent; /* 円の背景色 */
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/*円形リンク内のテキスト表示*/
+.p-feature__linkText{
+  text-align: center;
+  margin-top: 45%;
+}
+
+/*円形リンクのタイトル*/
+.p-feature__circleTitle{
+  margin-top: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/*円形リンクの詳細*/
+.p-feature__circleDescript{
+  margin-top: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/*円形リンク内のスライド設定*/
+.p-feature__slideLine{
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* 縦線の色 */
+  transition: left 0.5s ease;
+}
+
+.p-feature__circleLink:hover .p-feature__slideLine{
+  left:0;
+}
+
+/*///////////////////////////////家ができるまでの流れ///////////////////////////////*/
+/*ここから背景白*/
+.p-flow{
+  background-color: #fff;
+}
+
+.p-flow__sectionDescript{
+  margin-top: 5%;
+  margin-left: 1%;
+  margin-bottom: 5%;
+}
+
+/*フローチャート概要のスタイル*/
+.p-flow__flowchartContainer{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* フローチャートと詳細セクションの間のスペース */
+}
+
+/*フローチャートの定義*/
+.p-flow__flowchart{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2%;
+}
+
+.p-flow__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-flow__pentagon{
+  position: relative;
+  width: 200px;
+  height: 100px;
+  background: #444444;
+  clip-path: polygon(50% 100%, 100% 75%, 100% 0%, 0% 0%, 0% 75%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.p-flow__connector{
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  margin-top: -10px;
+}
+
+/*フローチャート横の詳細*/
+.p-flow_NumberedList{
+  list-style: none; /* デフォルト番号非表示*/
+  counter-reset: section; 
+  padding-left: 60px;
+}
+
+.p-flow__li{
+  counter-increment: section;
+  margin-bottom: 20px; /*各項目のスペース*/
+  position: relative; /* 番号を絶対配置するための基準 */
+  margin-bottom: 42px;
+}
+
+.p-flow__li::before{
+  content: counter(section); /* カウンターの値を表示 */
+  font-size: 18px; /* 番号のフォントサイズ */
+  color: #fff; /*番号の色は白*/
+  margin-right: 30px; /* 番号とタイトルの間のスペース */
+  position: absolute;
+  left: -45px; /* 必要に応じて調整 */
+  background-color: #444444;
+  border: 2px solid #444444; /* 枠線の色と太さ */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+.p-flow__title{
+  font-size: 20px; /* タイトルのフォントサイズ */
+  display: inline-block; /* タイトルをインラインブロック表示 */
+}
+
+.p-flow__separate{
+  border: none;
+  border-top: 1px solid #000; /*線の太さと色*/
+  margin: 10px 0; /* 線の上下の余白 */
+  margin-right: 20px; /* 右端からの余白を20pxに設定 */
+}
+
+.p-flow__description{
+  font-size: 16px;
+  margin : 0;
+}
+
+
+/*///////////////////////////////お問い合わせ///////////////////////////////*/
+/*ここから背景白*/
+.p-question{
+  background-color: #fff;
+  width: 100%;
+}
+
+/*コンテナのスタイル*/
+.p-question__container{
+  display: flex;
+  gap: 30px;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.p-question__boxLink{
+  position: relative; /* 疑似要素の基準点 */
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  align-items: center; /* 中央揃え */
+  justify-content: center;
+  width: 100%;
+  max-width: 250px;
+  height: 180px;
+  overflow: hidden;
+  border: 1px solid transparent; /* 枠線の太さを5pxに設定 */
+  border-color: black;
+  transition: border-width 0.3s;
+}
+
+/*右下三角形*/
+.p-question__boxLink::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;  /* 左側を透明に */
+  border-top: 10px solid transparent;   /* 上側を透明に */
+  border-right: 10px solid black;       /* 右側を黒く */
+  border-bottom: 10px solid black;      /* 下側を黒く */
+}
+
+
+/*枠線内の画像の大きさ*/
+.p-question__image{
+  width: 40%;
+  height: 40%;
+  object-fit: contain; /* 画像のアスペクト比を保ちながら収める */
+}
+
+/*枠線内のテキスト*/
+.p-question__text{
+  margin-top: 1%;
+  text-align: center; /* テキストを中央揃え（オプション） */
+}
+
+.p-question__boxLink:hover{
+  border-width: 4px ;
+}
+

@@ -1,12 +1,12 @@
-/* ========== 1. サイドバーの基本スタイル ========== */
+/* ========== サイドバーの基本スタイル ========== */
 .l-header {
   position: fixed;  /* 固定配置 */
   top: 0;
   left: 0;
   width: 300px;  /* サイドバーの幅 */
   height: 100vh;  /* 画面全体の高さ */
-  background-color: #2c2c2c;
-  color: white;
+  background-color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -25,6 +25,7 @@
 /*ヘッダータイトルフォント*/
 .l-header__text{
   font-size: 20px;
+  font-weight: 350;
   margin-left: 3%;
 }
 
