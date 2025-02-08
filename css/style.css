@@ -1,8 +1,6 @@
 /*style.css*/
 @import 'foundation/reset.css';
-@import 'foundation/variables.css';
-@import 'foundation/base.css';
 @import 'foundation/typography.css';
 @import 'layout/header.css';
 @import 'layout/main.css';
-@import 'component/logo.css';
+@import 'layout/footer.css';

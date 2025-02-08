@@ -1,0 +1,38 @@
+/*////////////////フッターの基本スタイル///////////////*/
+.l-footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-left: 300px;
+}
+
+.l-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.l-footer__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.l-footer__nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* 縦線（|）を追加 */
+.l-footer__nav a:not(:last-child)::after {
+  content: "|";
+  color: white;
+  position: absolute;
+  right: -10px;
+}

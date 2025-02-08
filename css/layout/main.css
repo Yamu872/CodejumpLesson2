@@ -85,7 +85,7 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 /*画像枠線の影指定*/
@@ -118,6 +118,19 @@
   color: #fff;
 }
 
+/* ========== スマホ用の追加スタイル ========== */
+@media (max-width: 768px){
+
+  /*ヘッダーの分戻す*/
+  .l-main__container{
+    margin-left: 0;
+  }
+
+  .p-projectSection__panel {
+    grid-template-columns: 1fr; /* 1列表示に変更 */
+  }
+}
+
 /*///////////////////////////////明るいHOUSEの特徴///////////////////////////////*/
 
 /*円形リンク配置用の設定*/
@@ -127,15 +140,26 @@
   justify-content: center;
   gap: 35px;
   color: #fff; /*ここでフォントカラー指定*/
-  padding-bottom: 15%; /*下のスペースを作成*/
+  padding-bottom: 10%; /*下のスペースを作成*/
+  max-width: 90%; /* 最大幅を制限 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 円形アイテム（PC版） */
+.p-feature__circleItem {
+  flex: 1;
+  max-width: 250px; /* 最大幅を指定 */
+  text-align: center;
 }
 
 /*円形リンク自体のスタイル設定*/
 .p-feature__circleLink{
   display: inline-block;
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* 正円を維持 */
   border-radius: 50%;
   border: 2px solid #fff; /* 白い枠線 */
   background-color: transparent; /* 円の背景色 */
@@ -177,6 +201,33 @@
 .p-feature__circleLink:hover .p-feature__slideLine{
   left:0;
 }
+
+@media (max-width: 768px){
+
+  .p-feature__circleLinks {
+    justify-content: space-between; /* 均等配置 */
+    gap: 5vw; /* スペースを画面幅に応じて調整 */
+    padding: 0 5%; /* 左右に余白を追加 */
+    padding-bottom: 10%;
+  }
+
+  .p-feature__circleItem {
+    flex: 1; /* 各アイテムを均等に伸ばす */
+    max-width: 40%; /* 各円の最大幅を指定 */
+  }
+
+  .p-feature__circleLink {
+    transform: scale(1); /* スマホ版では大きさをそのままにする */
+  }
+
+  .p-feature__circleTitle,
+  .p-feature__circleDescript {
+    font-size: 14px; /* フォントを小さく調整 */
+  }
+
+}
+
+
 
 /*///////////////////////////////家ができるまでの流れ///////////////////////////////*/
 /*ここから背景白*/
@@ -277,11 +328,34 @@
 }
 
 
+@media (max-width: 768px){
+
+  /*コンテナを縦並びに*/
+  .p-flow__flowchartContainer{
+    flex-direction: column;
+  }
+
+  /*フローチャートの定義(余白)*/
+  .p-flow__flowchart{
+    margin-bottom: 10%;
+  }
+
+  .p-flow__pentagon{
+    width: 95vw; /* 親要素の幅に合わせて広げる */
+    text-align: center; /* テキストを中央揃え */
+    padding: 10px 0; /* 上下の余白を追加 */
+    box-sizing: border-box; /* パディングを含めた幅調整 */
+
+  }
+}
+
+
 /*///////////////////////////////お問い合わせ///////////////////////////////*/
 /*ここから背景白*/
 .p-question{
   background-color: #fff;
   width: 100%;
+  padding-bottom: 100px;
 }
 
 /*コンテナのスタイル*/
@@ -290,6 +364,7 @@
   gap: 30px;
   padding-right: 5%;
   padding-left: 5%;
+  justify-content: center;  /* 水平方向の中央配置 */
 }
 
 .p-question__boxLink{
