@@ -36,3 +36,10 @@
   position: absolute;
   right: -10px;
 }
+
+
+@media (max-width: 768px){
+  .l-footer {
+    margin-left: 0px;
+  }
+}

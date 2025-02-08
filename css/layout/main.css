@@ -202,8 +202,10 @@
   left:0;
 }
 
+/* ========== スマホ用の追加スタイル ========== */
 @media (max-width: 768px){
 
+  /*円形リンク全体の調整*/
   .p-feature__circleLinks {
     justify-content: space-between; /* 均等配置 */
     gap: 5vw; /* スペースを画面幅に応じて調整 */
@@ -211,6 +213,7 @@
     padding-bottom: 10%;
   }
 
+  /*各円のバランス調整*/
   .p-feature__circleItem {
     flex: 1; /* 各アイテムを均等に伸ばす */
     max-width: 40%; /* 各円の最大幅を指定 */
@@ -235,6 +238,7 @@
   background-color: #fff;
 }
 
+/*セクション詳細位置設定*/
 .p-flow__sectionDescript{
   margin-top: 5%;
   margin-left: 1%;
@@ -262,6 +266,7 @@
   align-items: center;
 }
 
+/*作業項目(５角形)*/
 .p-flow__pentagon{
   position: relative;
   width: 200px;
@@ -274,6 +279,7 @@
   color: #fff;
 }
 
+/*フローチャート繋ぎ目*/
 .p-flow__connector{
   width: 50px;
   height: 50px;
@@ -327,7 +333,7 @@
   margin : 0;
 }
 
-
+/* ========== スマホ用の追加スタイル ========== */
 @media (max-width: 768px){
 
   /*コンテナを縦並びに*/
@@ -345,10 +351,8 @@
     text-align: center; /* テキストを中央揃え */
     padding: 10px 0; /* 上下の余白を追加 */
     box-sizing: border-box; /* パディングを含めた幅調整 */
-
   }
 }
-
 
 /*///////////////////////////////お問い合わせ///////////////////////////////*/
 /*ここから背景白*/
@@ -396,7 +400,6 @@
   border-bottom: 10px solid black;      /* 下側を黒く */
 }
 
-
 /*枠線内の画像の大きさ*/
 .p-question__image{
   width: 40%;
@@ -410,7 +413,25 @@
   text-align: center; /* テキストを中央揃え（オプション） */
 }
 
+/*ホバー時の枠線*/
 .p-question__boxLink:hover{
   border-width: 4px ;
 }
+
+/* ========== スマホ用の追加スタイル ========== */
+@media (max-width: 768px){
+  /*アイコンを縦にし、中央揃え*/
+  .p-question__container{
+    flex-direction: column;
+    justify-content: center; /* アイコンを中央に配置 */
+    align-items: center; /* アイコンを中央に配置 */
+  }
+
+  /*アイコンの大きさ変更*/
+  .p-question__boxLink{
+    max-width: 400px;
+  }
+
+}
+
 
